@@ -1,5 +1,6 @@
 # isntall beautifulsoup4 library ( ALLOWS us to use HTML file and grab data for scarp it)
 # also install requests library ( it allow us to grab HTMl files )
+# import pprint for preety printed formatted structure of the hackernews in good readable form.
 
 import requests
 from bs4 import BeautifulSoup 
@@ -23,10 +24,10 @@ subtext = soup.select('.subtext')
 links2 = soup2.select('.storylink')
 subtext2 = soup2.select('.subtext')
 
-mega_links = links + links2
-mega_subtext = subtext + subtext2
+mega_links = links + links2 # to combine both links 
+mega_subtext = subtext + subtext2 # to combine both texts 
 def sort_stories_by_votes(hnlist):
-	return sorted(hnlist, key= lambda k:k['votes'], reverse=True) # we use keys and pass it the key with votes to srort by votes using lambda function.
+	return sorted(hnlist, key= lambda k:k['votes'], reverse=True) # we use keys and pass it the key with votes to sort by votes using lambda function.
 
 
 
